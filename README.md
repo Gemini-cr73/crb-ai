@@ -2,90 +2,70 @@
 
 🚀 Personal portfolio showcasing AI, Machine Learning, Cloud, and Full-Stack projects.
 
----
-
 ## 🔗 Live Demo
 
 👉 https://crbdev.com  
 👉 https://www.crbdev.com  
 
----
-
 ## 📌 About This Project
 
-This portfolio highlights my work across:
+This portfolio is a centralized platform to showcase real-world projects across:
 
 - 🤖 Artificial Intelligence & Machine Learning  
-- ☁️ Cloud Engineering (Azure, Docker, APIs)  
+- ☁️ Cloud Engineering & Deployment  
 - 📊 Data Engineering & Analytics  
-- 💻 Full-Stack Development (Next.js, FastAPI)  
+- 💻 Full-Stack Web Development  
 
-The goal is to present real-world, production-ready projects with clear architecture, impact, and technical depth.
-
----
+The goal is to demonstrate practical, production-ready systems with clear architecture, scalability, and real-world impact.
 
 ## 🧠 Featured Projects
 
 ### 🏗️ AI Architecture Designer (ML)
-- ML-first decision system for architecture recommendations
-- Uses Logistic Regression, Random Forest, SVM
-- Optional LLM layer (Groq API)
-
----
+- Machine Learning–driven architecture recommendation system  
+- Algorithms: Logistic Regression, Random Forest, SVM  
+- Optional LLM integration using Groq API  
 
 ### 🛡️ Decision-Fragility Simulator
-- Simulates risk and instability in decision-making systems
-- PostgreSQL + analytics pipeline
-- Real-time reporting
-
----
+- Risk analysis engine for decision-making systems  
+- PostgreSQL-based analytics pipeline  
+- Real-time reporting and scoring  
 
 ### 📊 Agentic SQL RAG
-- Retrieval-Augmented Generation system
-- Hybrid search (FTS + vector embeddings)
-- FastAPI + PostgreSQL (pgvector)
-
----
+- Retrieval-Augmented Generation system  
+- Hybrid search (Full-Text Search + Vector Embeddings)  
+- FastAPI + PostgreSQL (pgvector)  
 
 ### 📈 AI Market Coach
-- Risk-first trading assistant
-- Crypto + Forex insights
-- Beginner-friendly decision guidance
-
----
+- Risk-first crypto & forex tracking system  
+- Focus on safe decision-making and market awareness  
 
 ### 🎯 AI Interview Coach
-- Mock interview system with feedback
-- Structured evaluation + coaching suggestions
-- Real-time improvement tracking
-
----
+- Mock interview platform with structured feedback  
+- Real-time coaching and performance tracking  
 
 ## 🧱 Tech Stack
 
-### Frontend
+### 🎨 Frontend
 - Next.js (App Router)
 - TypeScript
 - Tailwind CSS
 - Framer Motion
 
-### Backend
+### ⚙️ Backend (Project APIs)
 - FastAPI
 - Python
 - REST APIs
 
-### Data & ML
+### 🧠 Data & Machine Learning
 - Scikit-learn
 - Pandas / NumPy
-- Feature Engineering pipelines
+- Feature Engineering Pipelines
 
-### Cloud & DevOps
+### ☁️ Cloud & Deployment
 - Vercel (Frontend hosting)
-- Azure App Service (Containers)
+- Azure App Service (Containerized APIs)
 - Docker & Docker Compose
-- Cloudflare (DNS + SSL)
-
----
+- Cloudflare (DNS, SSL, CDN)
 
 ## 📁 Project Structure
 
@@ -102,7 +82,7 @@ crb-ai/
 │   │   └── contact/       # Contact page
 │   │
 │   ├── components/        # Reusable UI components
-│   ├── lib/               # Utilities / helpers
+│   ├── lib/               # Utility functions
 │   ├── data/              # JSON data (projects, skills)
 │   └── styles/            # Global styles
 │
