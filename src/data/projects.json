@@ -147,7 +147,7 @@
         "id": "blueprint-budget-ai",
         "slug": "blueprint-budget-ai",
         "name": "Blueprint Budget AI",
-        "status": "in-progress",
+        "status": "live",
         "one_liner": "AI-assisted home planning system for layout ideas, budget estimation, and build-oriented decision support.",
         "summary": "A full-stack project focused on helping users explore home-building ideas through budget-aware planning, visual structure, and AI-assisted workflows. It is designed as a practical decision-support tool for home design and planning.",
         "primary_tags": [
@@ -219,7 +219,7 @@
         "id": "intrinsic-safety-ethics-optimizer",
         "slug": "intrinsic-safety-ethics-optimizer",
         "name": "Intrinsic Safety & Ethics Optimizer",
-        "status": "in-progress",
+        "status": "live",
         "one_liner": "Safety- and ethics-aware AI system for evaluating decisions, retrieval evidence, and responsible system behavior.",
         "summary": "A concept-driven AI project focused on safety, ethics, retrieval, and evaluation workflows. It is designed as a serious portfolio piece centered on intrinsically safer AI decision support.",
         "primary_tags": [
