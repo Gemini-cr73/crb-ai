@@ -1,47 +1,71 @@
-# 🌐 CRB AI Portfolio
+# 🌐 CRB AI Portfolio — Skill Graph + Evidence Ledger
 
-🚀 Personal portfolio showcasing AI, Machine Learning, Cloud, and Full-Stack projects.
+🚀 A production-grade AI, Data, and Cloud engineering portfolio designed around **proof, not claims**.
 
-## 🔗 Live Demo
+👉 Live: https://crbdev.com
 
-👉 https://crbdev.com  
-👉 https://www.crbdev.com  
+## 🧠 Core Concept
 
-## 📌 About This Project
+This portfolio is built on a unique idea:
 
-This portfolio is a centralized platform to showcase real-world projects across:
+> **Skills should be demonstrated through evidence, not just listed.**
 
-- 🤖 Artificial Intelligence & Machine Learning  
-- ☁️ Cloud Engineering & Deployment  
-- 📊 Data Engineering & Analytics  
-- 💻 Full-Stack Web Development  
+Instead of static resumes or project lists, this platform introduces:
 
-The goal is to demonstrate practical, production-ready systems with clear architecture, scalability, and real-world impact.
+### 🔗 Skill Graph
+- Interactive visualization of technical capabilities  
+- Shows relationships across AI, ML, Data, Cloud, and Backend systems  
+- Highlights how skills connect in real-world architectures  
 
-## 🧠 Featured Projects
+### 📂 Evidence Ledger
+- Every skill is backed by **real, shipped projects**  
+- Includes:
+  - Case studies  
+  - Live demos  
+  - GitHub repositories  
+  - API documentation  
 
-### 🏗️ AI Architecture Designer (ML)
-- Machine Learning–driven architecture recommendation system  
+👉 This creates a **transparent, verifiable engineering profile**
+
+## 🚀 What This Portfolio Demonstrates
+
+- Building **production-grade ML & LLM systems**
+- Designing **end-to-end data pipelines**
+- Deploying **containerized applications to the cloud**
+- Creating **AI systems with real-world usability**
+- Connecting **skills → projects → outcomes**
+
+## 🧠 Featured Systems
+
+### 🏗️ AI Architecture Designer (ML-First)
+- ML-driven decision support for system architecture  
 - Algorithms: Logistic Regression, Random Forest, SVM  
-- Optional LLM integration using Groq API  
-
-### 🛡️ Decision-Fragility Simulator
-- Risk analysis engine for decision-making systems  
-- PostgreSQL-based analytics pipeline  
-- Real-time reporting and scoring  
+- Designed for reproducible evaluation and model comparison  
+- Optional LLM layer (Groq) for explanation (ML-first system)
 
 ### 📊 Agentic SQL RAG
-- Retrieval-Augmented Generation system  
-- Hybrid search (Full-Text Search + Vector Embeddings)  
-- FastAPI + PostgreSQL (pgvector)  
-
-### 📈 AI Market Coach
-- Risk-first crypto & forex tracking system  
-- Focus on safe decision-making and market awareness  
+- Grounded AI retrieval system combining:
+  - Full-Text Search (PostgreSQL)
+  - Vector Embeddings (pgvector)
+- Hybrid ranking + deterministic ordering  
+- Evidence-based responses with citations  
 
 ### 🎯 AI Interview Coach
-- Mock interview platform with structured feedback  
-- Real-time coaching and performance tracking  
+- Structured interview practice system  
+- Real-time feedback + scoring engine  
+- LLM-assisted coaching with reproducible evaluation  
+
+### 📈 AI Market Coach
+- Risk-first crypto & forex analysis system  
+- Focus on:
+  - Safe entry strategies  
+  - Market awareness  
+  - Decision discipline  
+
+### 🛡️ Decision-Fragility Simulator
+- Behavioral risk modeling system  
+- Tracks and evaluates decision patterns  
+- Generates fragility scores and reports  
 
 ## 🧱 Tech Stack
 
@@ -51,21 +75,36 @@ The goal is to demonstrate practical, production-ready systems with clear archit
 - Tailwind CSS
 - Framer Motion
 
-### ⚙️ Backend (Project APIs)
-- FastAPI
-- Python
-- REST APIs
+### ⚙️ Backend / APIs
+- FastAPI (Python)
+- RESTful API design
+- Modular service architecture
 
-### 🧠 Data & Machine Learning
-- Scikit-learn
+### 🧠 Machine Learning & Data
+- Scikit-learn (ML models)
 - Pandas / NumPy
-- Feature Engineering Pipelines
+- Feature engineering pipelines
+- Model evaluation & comparison
 
-### ☁️ Cloud & Deployment
+### 🗄️ Data Systems
+- PostgreSQL
+- pgvector (vector search)
+- Full-Text Search (FTS)
+
+### ☁️ Cloud & DevOps
 - Vercel (Frontend hosting)
-- Azure App Service (Containerized APIs)
+- Azure App Service (Containers)
 - Docker & Docker Compose
 - Cloudflare (DNS, SSL, CDN)
+
+## 🧩 Key Differentiators
+
+- ✅ **Evidence-first portfolio design**
+- ✅ **ML-first systems (not LLM-only wrappers)**
+- ✅ **Production-style architecture**
+- ✅ **Hybrid retrieval (FTS + vector search)**
+- ✅ **Cloud-native deployment pipelines**
+- ✅ **Clear separation of ML vs LLM responsibilities**
 
 ## 📁 Project Structure
 
@@ -77,13 +116,13 @@ crb-ai/
 │   ├── app/               # Next.js App Router pages
 │   │   ├── page.tsx       # Home page
 │   │   ├── projects/      # Projects page
-│   │   ├── skills/        # Skills page
+│   │   ├── skills/        # Skill Graph + Evidence Ledger
 │   │   ├── about/         # About page
 │   │   └── contact/       # Contact page
 │   │
 │   ├── components/        # Reusable UI components
-│   ├── lib/               # Utility functions
-│   ├── data/              # JSON data (projects, skills)
+│   ├── lib/               # Graph logic, ranking, filters
+│   ├── data/              # Structured project + skill data
 │   └── styles/            # Global styles
 │
 ├── package.json
