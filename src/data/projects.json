@@ -255,7 +255,7 @@
         "id": "market-guardian",
         "slug": "market-guardian",
         "name": "Market Guardian",
-        "status": "in-progress",
+        "status": "live",
         "one_liner": "Risk-first crypto and forex tracker focused on safer market reading and beginner-friendly decision support.",
         "summary": "A financial intelligence project designed around risk awareness, live market visibility, and beginner-safe investing behavior rather than speculative trading. It is intended to combine metrics, guidance, and portfolio tracking.",
         "primary_tags": [
