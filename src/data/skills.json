@@ -1,0 +1,391 @@
+{
+    "categories": [
+        {
+            "id": "ai_llms",
+            "label": "AI & LLMs",
+            "description": "LLM application design, prompting, retrieval, evaluation, and responsible AI workflows."
+        },
+        {
+            "id": "ml",
+            "label": "Machine Learning",
+            "description": "Supervised learning, model comparison, evaluation metrics, and experiment design."
+        },
+        {
+            "id": "data_eng",
+            "label": "Data Engineering",
+            "description": "Pipelines, storage, retrieval, analytics, and transformation for production-style systems."
+        },
+        {
+            "id": "cloud_devops",
+            "label": "Cloud & DevOps",
+            "description": "Deployment, containers, cloud services, and production operations."
+        },
+        {
+            "id": "backend",
+            "label": "Backend & Product",
+            "description": "APIs, system architecture, frontend integration, and product-oriented system design."
+        }
+    ],
+    "skills": [
+        {
+            "id": "llms",
+            "label": "LLMs",
+            "category_id": "ai_llms",
+            "summary": "Builds LLM-powered applications for structured outputs, assistants, and decision-support workflows.",
+            "confidence": "production",
+            "tools": [
+                "Groq API",
+                "OpenAI-style APIs",
+                "Prompt Chaining"
+            ],
+            "evidence": [
+                "Used across AI Interview Coach, AI Market Coach, and AI Architecture Designer"
+            ]
+        },
+        {
+            "id": "prompt_engineering",
+            "label": "Prompt Engineering",
+            "category_id": "ai_llms",
+            "summary": "Designs prompts for structured responses, guided reasoning, evaluation, and domain-specific outputs.",
+            "confidence": "production",
+            "tools": [
+                "Prompt Templates",
+                "Structured Outputs",
+                "Role Prompting"
+            ],
+            "evidence": [
+                "Used to generate reliable outputs for coaching, planning, and market reasoning workflows"
+            ]
+        },
+        {
+            "id": "rag",
+            "label": "RAG",
+            "category_id": "ai_llms",
+            "summary": "Implements retrieval-augmented generation systems with evidence grounding and document-aware workflows.",
+            "confidence": "shipped",
+            "tools": [
+                "Hybrid Retrieval",
+                "Chunking",
+                "Embeddings"
+            ],
+            "evidence": [
+                "Core capability in Agentic SQL RAG and evidence-aware AI system design"
+            ]
+        },
+        {
+            "id": "evaluation",
+            "label": "Evaluation",
+            "category_id": "ai_llms",
+            "summary": "Designs scoring, grounding, and comparison workflows for model outputs and AI system quality.",
+            "confidence": "academic",
+            "tools": [
+                "Scoring",
+                "Grounding Checks",
+                "Metrics"
+            ],
+            "evidence": [
+                "Applied in interview scoring, ML reporting, and RAG system validation"
+            ]
+        },
+        {
+            "id": "responsible_ai",
+            "label": "Responsible AI",
+            "category_id": "ai_llms",
+            "summary": "Explores safer AI design through ethics, evidence-aware reasoning, and governance-oriented system choices.",
+            "confidence": "academic",
+            "tools": [
+                "Ethics Frameworks",
+                "Evidence-Based Reasoning",
+                "Safety Thinking"
+            ],
+            "evidence": [
+                "Applied in safety- and ethics-centered project planning"
+            ]
+        },
+        {
+            "id": "machine_learning",
+            "label": "Machine Learning",
+            "category_id": "ml",
+            "summary": "Builds ML systems with supervised algorithms, model comparison, and performance-driven workflows.",
+            "confidence": "production",
+            "tools": [
+                "scikit-learn",
+                "Classification Models",
+                "Feature Engineering"
+            ],
+            "evidence": [
+                "Applied in ML-first system design and portfolio projects"
+            ]
+        },
+        {
+            "id": "model_evaluation",
+            "label": "Model Evaluation",
+            "category_id": "ml",
+            "summary": "Compares models using structured metrics, validation logic, and reproducible evaluation design.",
+            "confidence": "production",
+            "tools": [
+                "Confusion Matrix",
+                "ROC-AUC",
+                "F1 Score"
+            ],
+            "evidence": [
+                "Used in architecture decision support and model comparison workflows"
+            ]
+        },
+        {
+            "id": "analytics",
+            "label": "Analytics",
+            "category_id": "ml",
+            "summary": "Uses metrics and analysis to derive signals, compare outcomes, and support decision-making.",
+            "confidence": "shipped",
+            "tools": [
+                "Dashboards",
+                "Metrics",
+                "Signal Analysis"
+            ],
+            "evidence": [
+                "Used in market, fragility, and evaluation-focused workflows"
+            ]
+        },
+        {
+            "id": "risk_modeling",
+            "label": "Risk Modeling",
+            "category_id": "ml",
+            "summary": "Frames system outputs and interpretations around risk, stability, and safer action guidance.",
+            "confidence": "learning",
+            "tools": [
+                "Scoring Logic",
+                "Signal Framing",
+                "Risk Indicators"
+            ],
+            "evidence": [
+                "Applied in Market Guardian and Decision-Fragility Simulator concepts"
+            ]
+        },
+        {
+            "id": "data_engineering",
+            "label": "Data Engineering",
+            "category_id": "data_eng",
+            "summary": "Designs data flows, storage paths, and transformation layers for production-style systems.",
+            "confidence": "shipped",
+            "tools": [
+                "ETL",
+                "Pipelines",
+                "Structured Data Flows"
+            ],
+            "evidence": [
+                "Used in retrieval systems, analytics workflows, and data-centric applications"
+            ]
+        },
+        {
+            "id": "retrieval",
+            "label": "Retrieval",
+            "category_id": "data_eng",
+            "summary": "Builds database-backed retrieval and search workflows for evidence-grounded AI systems.",
+            "confidence": "shipped",
+            "tools": [
+                "Hybrid Search",
+                "Ranking",
+                "Indexing"
+            ],
+            "evidence": [
+                "Central capability in Agentic SQL RAG"
+            ]
+        },
+        {
+            "id": "postgres",
+            "label": "Postgres",
+            "category_id": "data_eng",
+            "summary": "Uses PostgreSQL for persistent storage, retrieval workflows, and backend data services.",
+            "confidence": "shipped",
+            "tools": [
+                "PostgreSQL",
+                "SQL",
+                "Database Design"
+            ],
+            "evidence": [
+                "Used in Decision-Fragility Simulator and Agentic SQL RAG"
+            ]
+        },
+        {
+            "id": "python",
+            "label": "Python",
+            "category_id": "data_eng",
+            "summary": "Builds backend services, analytics logic, ML pipelines, and scripting workflows in Python.",
+            "confidence": "production",
+            "tools": [
+                "Python",
+                "Type Hints",
+                "Scripting"
+            ],
+            "evidence": [
+                "Core language across nearly all portfolio projects"
+            ]
+        },
+        {
+            "id": "data_visualization",
+            "label": "Data Visualization",
+            "category_id": "data_eng",
+            "summary": "Designs outputs and interfaces that make analytics, metrics, and model signals easier to understand.",
+            "confidence": "learning",
+            "tools": [
+                "Dashboards",
+                "Charts",
+                "Visual Evidence"
+            ],
+            "evidence": [
+                "Applied in portfolio dashboards and market/risk product concepts"
+            ]
+        },
+        {
+            "id": "docker",
+            "label": "Docker",
+            "category_id": "cloud_devops",
+            "summary": "Packages applications into repeatable containers for local development and deployment.",
+            "confidence": "production",
+            "tools": [
+                "Docker",
+                "Docker Compose",
+                "Container Workflows"
+            ],
+            "evidence": [
+                "Used across deployed AI portfolio projects"
+            ]
+        },
+        {
+            "id": "cloud_deployment",
+            "label": "Cloud Deployment",
+            "category_id": "cloud_devops",
+            "summary": "Deploys APIs and UIs to cloud platforms with production-minded configuration and routing.",
+            "confidence": "production",
+            "tools": [
+                "Azure App Service",
+                "Cloudflare",
+                "Docker Hub"
+            ],
+            "evidence": [
+                "Used to deploy portfolio projects publicly"
+            ]
+        },
+        {
+            "id": "fastapi",
+            "label": "FastAPI",
+            "category_id": "cloud_devops",
+            "summary": "Builds backend APIs for AI, retrieval, scoring, and application workflows using FastAPI.",
+            "confidence": "production",
+            "tools": [
+                "FastAPI",
+                "Uvicorn",
+                "Pydantic"
+            ],
+            "evidence": [
+                "Core backend framework across multiple deployed projects"
+            ]
+        },
+        {
+            "id": "streamlit",
+            "label": "Streamlit",
+            "category_id": "cloud_devops",
+            "summary": "Builds lightweight data and AI interfaces for experiments, evaluation, and decision support.",
+            "confidence": "shipped",
+            "tools": [
+                "Streamlit",
+                "Interactive UI",
+                "Dashboard Patterns"
+            ],
+            "evidence": [
+                "Used in AI Architecture Designer and related ML-first interfaces"
+            ]
+        },
+        {
+            "id": "backend_api",
+            "label": "Backend APIs",
+            "category_id": "backend",
+            "summary": "Designs and implements backend endpoints that support AI workflows, scoring, and integrations.",
+            "confidence": "production",
+            "tools": [
+                "REST APIs",
+                "JSON Contracts",
+                "Routing"
+            ],
+            "evidence": [
+                "Used across AI Interview Coach, AI Market Coach, and retrieval systems"
+            ]
+        },
+        {
+            "id": "api_design",
+            "label": "API Design",
+            "category_id": "backend",
+            "summary": "Structures API contracts and flows for maintainable, production-style applications.",
+            "confidence": "shipped",
+            "tools": [
+                "Endpoint Design",
+                "Schemas",
+                "Integration Patterns"
+            ],
+            "evidence": [
+                "Applied across multiple full-stack and AI backend projects"
+            ]
+        },
+        {
+            "id": "system_design",
+            "label": "System Design",
+            "category_id": "backend",
+            "summary": "Designs end-to-end architectures spanning data, AI, APIs, and deployment workflows.",
+            "confidence": "production",
+            "tools": [
+                "Architecture Planning",
+                "Service Boundaries",
+                "Workflow Design"
+            ],
+            "evidence": [
+                "Core strength across architecture, RAG, and full-stack AI projects"
+            ]
+        },
+        {
+            "id": "frontend_integration",
+            "label": "Frontend Integration",
+            "category_id": "backend",
+            "summary": "Connects backend logic to usable interfaces for portfolio apps, tools, and decision-support systems.",
+            "confidence": "shipped",
+            "tools": [
+                "Next.js",
+                "UI-to-API Integration",
+                "Client Workflows"
+            ],
+            "evidence": [
+                "Used in full-stack AI portfolio projects and product-style applications"
+            ]
+        },
+        {
+            "id": "nextjs",
+            "label": "Next.js",
+            "category_id": "backend",
+            "summary": "Builds React-based frontend applications with modern routing and production-oriented structure.",
+            "confidence": "learning",
+            "tools": [
+                "Next.js",
+                "App Router",
+                "TypeScript"
+            ],
+            "evidence": [
+                "Used in the portfolio website and Blueprint Budget AI frontend work"
+            ]
+        },
+        {
+            "id": "product_thinking",
+            "label": "Product Thinking",
+            "category_id": "backend",
+            "summary": "Shapes technical systems around user value, workflows, usability, and portfolio-grade presentation.",
+            "confidence": "shipped",
+            "tools": [
+                "Feature Framing",
+                "Workflow Design",
+                "Portfolio UX"
+            ],
+            "evidence": [
+                "Applied across AI tools designed as usable end-to-end products"
+            ]
+        }
+    ]
+}

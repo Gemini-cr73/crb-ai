@@ -1,0 +1,25 @@
+{
+    "site": {
+        "name": "Cristian Reynoso-Betancourt",
+        "domain": "crb.ai",
+        "location": "Washington, DC Metro · Open to Remote",
+        "headline": "AI, Data & Cloud Engineer building production-grade ML & LLM systems",
+        "subheadline": "I design and ship end-to-end systems — from data pipelines and ML models to APIs and cloud deployments — backed by real projects, measurable outcomes, and live demos."
+    },
+    "links": {
+        "github_url": "https://github.com/Gemini-cr73",
+        "linkedin_url": "https://www.linkedin.com/in/cristianreynosobetancourt/",
+        "resume_url": "/resume/Cristian-Reynoso-Betancourt-Resume.pdf",
+        "email": "crb3305@gmail.com"
+    },
+    "cta": {
+        "primary": {
+            "label": "Explore Skills",
+            "href": "/skills"
+        },
+        "secondary": {
+            "label": "View Projects",
+            "href": "/projects"
+        }
+    }
+}

@@ -1,0 +1,290 @@
+[
+    {
+        "id": "ai-architecture-designer",
+        "slug": "ai-architecture-designer",
+        "name": "AI Architecture Designer",
+        "status": "live",
+        "one_liner": "ML-first decision support system for architecture planning, model comparison, and AI system design workflows.",
+        "summary": "A portfolio and applied machine learning project focused on architecture decision support. The system combines supervised ML experiments, dataset-specific evaluation, and an optional LLM layer for post-ML reasoning and architecture guidance.",
+        "primary_tags": [
+            "ML",
+            "FastAPI",
+            "Streamlit",
+            "Azure"
+        ],
+        "skills_used": [
+            "machine_learning",
+            "model_evaluation",
+            "fastapi",
+            "streamlit",
+            "system_design",
+            "cloud_deployment"
+        ],
+        "evidence": [
+            "Built an ML-first architecture decision support workflow with multiple supervised models.",
+            "Structured the project around reproducible evaluation, metrics, and architecture artifacts.",
+            "Deployed the API and UI as containerized cloud services."
+        ],
+        "links": {
+            "live_demo": "https://arch.ai-coach-lab.com",
+            "github": "https://github.com/Gemini-cr73/ai-arch-designer-ml",
+            "api": "https://arch-api.ai-coach-lab.com/docs"
+        },
+        "media": {
+            "architecture": "",
+            "screenshots": []
+        }
+    },
+    {
+        "id": "ai-interview-coach",
+        "slug": "ai-interview-coach",
+        "name": "AI Interview Coach",
+        "status": "live",
+        "one_liner": "Interview practice system with structured feedback, scoring, and LLM-assisted coaching.",
+        "summary": "A production-style AI application that simulates technical interviews, scores responses, and generates structured coaching feedback. It was built for practical interview preparation with clean API-driven workflows and deployment-ready architecture.",
+        "primary_tags": [
+            "LLMs",
+            "FastAPI",
+            "Docker",
+            "Azure"
+        ],
+        "skills_used": [
+            "llms",
+            "prompt_engineering",
+            "fastapi",
+            "backend_api",
+            "docker",
+            "cloud_deployment"
+        ],
+        "evidence": [
+            "Implemented interview question generation and structured coaching feedback.",
+            "Built scoring and response evaluation workflows.",
+            "Deployed the application using a containerized cloud architecture."
+        ],
+        "links": {
+            "live_demo": "https://app.ai-coach-lab.com",
+            "github": "https://github.com/Gemini-cr73/ai-interview-coach",
+            "api": "https://api.ai-coach-lab.com/docs"
+        },
+        "media": {
+            "architecture": "",
+            "screenshots": []
+        }
+    },
+    {
+        "id": "ai-market-coach",
+        "slug": "ai-market-coach",
+        "name": "AI Market Coach",
+        "status": "live",
+        "one_liner": "Market analysis assistant that turns user questions into structured reasoning and actionable summaries.",
+        "summary": "A cloud-deployed AI assistant designed to help users interpret market questions through structured outputs, guided reasoning, and a production-style API and UI flow.",
+        "primary_tags": [
+            "LLMs",
+            "APIs",
+            "Docker",
+            "Azure"
+        ],
+        "skills_used": [
+            "llms",
+            "prompt_engineering",
+            "api_design",
+            "docker",
+            "cloud_deployment",
+            "frontend_integration"
+        ],
+        "evidence": [
+            "Built an AI workflow for market-focused question answering.",
+            "Structured outputs for clearer reasoning and actionable summaries.",
+            "Migrated the project to a low-cost production-style deployment setup."
+        ],
+        "links": {
+            "live_demo": "https://market.ai-coach-lab.com",
+            "github": "https://github.com/Gemini-cr73/ai-market-coach",
+            "api": "https://market-api.ai-coach-lab.com/docs"
+        },
+        "media": {
+            "architecture": "",
+            "screenshots": []
+        }
+    },
+    {
+        "id": "agentic-sql-rag",
+        "slug": "agentic-sql-rag",
+        "name": "Agentic SQL RAG",
+        "status": "live",
+        "one_liner": "Grounded retrieval system combining SQL, hybrid search, citations, and document-aware AI responses.",
+        "summary": "A retrieval-augmented generation system that integrates structured storage, hybrid retrieval, grounded responses, evidence citations, and production deployment. It was built as a portfolio-grade system spanning backend, retrieval, evaluation, and UI.",
+        "primary_tags": [
+            "RAG",
+            "Postgres",
+            "FastAPI",
+            "Azure"
+        ],
+        "skills_used": [
+            "rag",
+            "postgres",
+            "retrieval",
+            "fastapi",
+            "docker",
+            "cloud_deployment"
+        ],
+        "evidence": [
+            "Implemented hybrid retrieval with database-backed indexing and ranking.",
+            "Built grounded response workflows with evidence and citations.",
+            "Deployed the API and UI publicly with a production-style architecture."
+        ],
+        "links": {
+            "live_demo": "https://rag.ai-coach-lab.com",
+            "github": "https://github.com/Gemini-cr73/agentic-sql-rag",
+            "api": "https://api-rag.ai-coach-lab.com/docs"
+        },
+        "media": {
+            "architecture": "",
+            "screenshots": []
+        }
+    },
+    {
+        "id": "blueprint-budget-ai",
+        "slug": "blueprint-budget-ai",
+        "name": "Blueprint Budget AI",
+        "status": "in-progress",
+        "one_liner": "AI-assisted home planning system for layout ideas, budget estimation, and build-oriented decision support.",
+        "summary": "A full-stack project focused on helping users explore home-building ideas through budget-aware planning, visual structure, and AI-assisted workflows. It is designed as a practical decision-support tool for home design and planning.",
+        "primary_tags": [
+            "AI",
+            "FastAPI",
+            "Next.js",
+            "Planning"
+        ],
+        "skills_used": [
+            "fastapi",
+            "nextjs",
+            "frontend_integration",
+            "system_design",
+            "api_design",
+            "product_thinking"
+        ],
+        "evidence": [
+            "Designed dashboard-driven workflows for home planning inputs and outputs.",
+            "Structured backend logic around budget and planning assistance.",
+            "Built the project as a full-stack AI product with room for future visual generation features."
+        ],
+        "links": {
+            "live_demo": "",
+            "github": "",
+            "api": ""
+        },
+        "media": {
+            "architecture": "",
+            "screenshots": []
+        }
+    },
+    {
+        "id": "decision-fragility-simulator",
+        "slug": "decision-fragility-simulator",
+        "name": "Decision-Fragility Simulator",
+        "status": "live",
+        "one_liner": "Risk and stability scoring system that turns user actions into measurable fragility signals.",
+        "summary": "A simulation and reporting project designed to model decision fragility through sequential processing, database-backed storage, and interpretable reporting. It was built as a deployable AI and data system with a practical risk lens.",
+        "primary_tags": [
+            "Data",
+            "Postgres",
+            "Docker",
+            "Azure"
+        ],
+        "skills_used": [
+            "python",
+            "postgres",
+            "docker",
+            "backend_api",
+            "analytics",
+            "cloud_deployment"
+        ],
+        "evidence": [
+            "Built ingestion and analytics workflows to compute fragility scores.",
+            "Generated structured reports from stored user action data.",
+            "Prepared the project for public deployment with a production-ready container flow."
+        ],
+        "links": {
+            "live_demo": "https://app.fragility-sim.com",
+            "github": "https://github.com/Gemini-cr73/decision-fragility-simulator",
+            "api": "https://api.fragility-sim.com/docs"
+        },
+        "media": {
+            "architecture": "",
+            "screenshots": []
+        }
+    },
+    {
+        "id": "intrinsic-safety-ethics-optimizer",
+        "slug": "intrinsic-safety-ethics-optimizer",
+        "name": "Intrinsic Safety & Ethics Optimizer",
+        "status": "in-progress",
+        "one_liner": "Safety- and ethics-aware AI system for evaluating decisions, retrieval evidence, and responsible system behavior.",
+        "summary": "A concept-driven AI project focused on safety, ethics, retrieval, and evaluation workflows. It is designed as a serious portfolio piece centered on intrinsically safer AI decision support.",
+        "primary_tags": [
+            "AI Safety",
+            "RAG",
+            "Ethics",
+            "Evaluation"
+        ],
+        "skills_used": [
+            "rag",
+            "evaluation",
+            "llms",
+            "system_design",
+            "prompt_engineering",
+            "responsible_ai"
+        ],
+        "evidence": [
+            "Defined a milestone-based architecture centered on safer AI reasoning.",
+            "Designed for retrieval, evaluation, and evidence-aware decision support.",
+            "Positioned the system as a portfolio project with strong AI governance relevance."
+        ],
+        "links": {
+            "live_demo": "",
+            "github": "",
+            "api": ""
+        },
+        "media": {
+            "architecture": "",
+            "screenshots": []
+        }
+    },
+    {
+        "id": "market-guardian",
+        "slug": "market-guardian",
+        "name": "Market Guardian",
+        "status": "in-progress",
+        "one_liner": "Risk-first crypto and forex tracker focused on safer market reading and beginner-friendly decision support.",
+        "summary": "A financial intelligence project designed around risk awareness, live market visibility, and beginner-safe investing behavior rather than speculative trading. It is intended to combine metrics, guidance, and portfolio tracking.",
+        "primary_tags": [
+            "Finance",
+            "Analytics",
+            "Risk",
+            "AI"
+        ],
+        "skills_used": [
+            "analytics",
+            "python",
+            "data_visualization",
+            "product_thinking",
+            "api_design",
+            "risk_modeling"
+        ],
+        "evidence": [
+            "Designed a beginner-safe market tracking concept centered on risk awareness.",
+            "Defined milestone plans for trade history, portfolio tracking, and AI-assisted guidance.",
+            "Positioned the product to differ from typical trackers through safer investing behavior."
+        ],
+        "links": {
+            "live_demo": "https://guardian.ai-coach-lab.com",
+            "github": "https://github.com/Gemini-cr73/market-guardian",
+            "api": "https://guardian-api.ai-coach-lab.com/docs"
+        },
+        "media": {
+            "architecture": "",
+            "screenshots": []
+        }
+    }
+]
