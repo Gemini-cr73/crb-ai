@@ -192,11 +192,11 @@ function SkillGraphCanvas({
     const { nodes, edges } = useMemo(() => buildSkillGraph(skillsData), [skillsData]);
 
     const categoryPositions: Record<string, { x: number; y: number }> = {
-        ai_llms: { x: 260, y: 80 },
-        ml: { x: 460, y: 130 },
-        data_eng: { x: 100, y: 230 },
-        cloud_devops: { x: 280, y: 300 },
-        backend: { x: 460, y: 300 },
+        ai_llms: { x: 175, y: 95 },
+        ml: { x: 360, y: 135 },
+        data_eng: { x: 110, y: 265 },
+        cloud_devops: { x: 245, y: 345 },
+        backend: { x: 395, y: 315 },
     };
 
     const nodePositions = useMemo(() => {
@@ -218,8 +218,8 @@ function SkillGraphCanvas({
             const angle = (index * (Math.PI * 2)) / 5 - Math.PI / 2;
 
             positions[node.id] = {
-                x: categoryPosition.x + Math.cos(angle) * 70,
-                y: categoryPosition.y + Math.sin(angle) * 60,
+                x: categoryPosition.x + Math.cos(angle) * 62,
+                y: categoryPosition.y + Math.sin(angle) * 52,
             };
         });
 
@@ -248,7 +248,7 @@ function SkillGraphCanvas({
     }, [edges, selectedSkillId]);
 
     return (
-        <svg viewBox="0 0 580 400" className="h-full w-full" aria-label="Skill graph">
+        <svg viewBox="0 0 520 420" className="h-full w-full" aria-label="Skill graph">
             {edges.map((edge, index) => {
                 const from = nodePositions[edge.source];
                 const to = nodePositions[edge.target];
@@ -267,8 +267,8 @@ function SkillGraphCanvas({
                         y1={from.y}
                         x2={to.x}
                         y2={to.y}
-                        stroke={isConnected ? "rgba(255,255,255,0.24)" : "rgba(255,255,255,0.08)"}
-                        strokeWidth={isConnected ? (isCoOccurrence ? 1.2 : 1.8) : isCoOccurrence ? 0.8 : 1.2}
+                        stroke={isConnected ? "rgba(255,255,255,0.26)" : "rgba(255,255,255,0.08)"}
+                        strokeWidth={isConnected ? (isCoOccurrence ? 1.2 : 1.8) : isCoOccurrence ? 0.8 : 1.1}
                         strokeDasharray={isCoOccurrence ? "3 4" : undefined}
                         className="transition-all duration-300"
                     />
@@ -303,7 +303,7 @@ function SkillGraphCanvas({
                             stroke={color}
                             strokeWidth={isSelected ? 1.8 : isCategory ? 1 : 0.8}
                             strokeOpacity={isDimmed ? 0.15 : isSelected ? 0.95 : isCategory ? 0.6 : 0.45}
-                            opacity={isConnected ? 1 : 0.35}
+                            opacity={isConnected ? 1 : 0.32}
                             className="transition-all duration-300"
                         />
 
@@ -314,7 +314,7 @@ function SkillGraphCanvas({
                                 stroke={color}
                                 strokeWidth={0.5}
                                 strokeOpacity={isSelected ? 0.28 : 0}
-                                opacity={isConnected ? 1 : 0.35}
+                                opacity={isConnected ? 1 : 0.32}
                                 className="transition-all duration-300"
                             />
                         )}
@@ -335,7 +335,7 @@ function SkillGraphCanvas({
                             fill={color}
                             fontSize={isCategory ? 10 : 9}
                             fontWeight={isCategory ? 500 : isSelected ? 600 : 400}
-                            opacity={isConnected ? 1 : 0.35}
+                            opacity={isConnected ? 1 : 0.32}
                         >
                             {node.label.length > 12 ? `${node.label.slice(0, 11)}…` : node.label}
                         </text>
@@ -343,30 +343,22 @@ function SkillGraphCanvas({
                 );
             })}
 
-            <g transform="translate(16, 370)">
-                <line
-                    x1="0"
-                    y1="6"
-                    x2="20"
-                    y2="6"
-                    stroke="rgba(255,255,255,0.2)"
-                    strokeWidth="1.2"
-                />
-                <text x="25" y="10" fill="rgba(155,153,143,0.6)" fontSize="9">
-                    skill belongs to category
+            <g transform="translate(18, 392)">
+                <circle cx="0" cy="0" r="4" fill="#f0a020" />
+                <text x="10" y="4" fill="rgba(155,153,143,0.75)" fontSize="9">
+                    selected
                 </text>
 
-                <line
-                    x1="150"
-                    y1="6"
-                    x2="170"
-                    y2="6"
-                    stroke="rgba(255,255,255,0.2)"
-                    strokeWidth="0.8"
-                    strokeDasharray="3 4"
+                <circle
+                    cx="70"
+                    cy="0"
+                    r="4"
+                    fill="none"
+                    stroke="rgba(255,255,255,0.4)"
+                    strokeWidth="1"
                 />
-                <text x="175" y="10" fill="rgba(155,153,143,0.6)" fontSize="9">
-                    co-occurs with
+                <text x="80" y="4" fill="rgba(155,153,143,0.75)" fontSize="9">
+                    skill
                 </text>
             </g>
         </svg>
@@ -377,7 +369,7 @@ type ViewMode = "list" | "graph";
 
 export default function SkillsPage() {
     const skillsData = useMemo(() => getSkills(), []);
-    const [view, setView] = useState<ViewMode>("list");
+    const [view, setView] = useState<ViewMode>("graph");
     const [selectedSkillId, setSelectedSkillId] = useState<string | null>("docker");
     const [query, setQuery] = useState("");
 
@@ -387,7 +379,6 @@ export default function SkillsPage() {
 
     const ledgerProjects: Project[] = useMemo(() => {
         if (!selectedSkillId) return [];
-
         const rawProjects = getProjectsBySkill(selectedSkillId);
         return rankProjectsForSkill(rawProjects, selectedSkillId);
     }, [selectedSkillId]);
@@ -400,145 +391,150 @@ export default function SkillsPage() {
         skillsData.skills.find((skill) => skill.id === selectedSkillId) ?? null;
 
     return (
-        <main className="flex min-h-[calc(100vh-56px)] flex-col">
-            <div className="flex flex-col gap-4 border-b border-zinc-800 px-5 py-4 lg:flex-row lg:items-center lg:justify-between">
-                <div className="space-y-1">
+        <main className="mx-auto flex w-full max-w-7xl flex-col px-0 py-0">
+            <section className="border-t border-zinc-900">
+                <div className="border-b border-zinc-800 px-4 py-3 sm:px-6">
                     <p className="text-[11px] uppercase tracking-[0.2em] text-zinc-500">
-                        Skills
+                        Skills — Skill Graph + Evidence Ledger
                     </p>
-                    <h1 className="text-lg font-medium text-zinc-200">
-                        Skill graph + evidence ledger
-                    </h1>
                 </div>
 
-                <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-                    <input
-                        type="search"
-                        placeholder="Search skills..."
-                        value={query}
-                        onChange={(e) => setQuery(e.target.value)}
-                        className="w-full rounded-lg border border-zinc-800 bg-zinc-900 px-3 py-2 text-sm text-zinc-300 placeholder:text-zinc-600 transition-colors focus:border-zinc-600 focus:outline-none sm:w-56"
-                    />
+                <div className="grid min-h-[720px] grid-cols-1 lg:grid-cols-[54%_46%]">
+                    <div className="border-b border-zinc-800 lg:border-b-0 lg:border-r">
+                        <div className="flex items-center justify-between border-b border-zinc-800 px-4 py-3 sm:px-5">
+                            <p className="text-sm font-medium text-zinc-200">Skill Graph</p>
 
-                    <div className="flex overflow-hidden rounded-lg border border-zinc-800 text-xs">
-                        <button
-                            type="button"
-                            onClick={() => setView("list")}
-                            className={`px-3 py-2 transition-colors ${view === "list"
-                                ? "bg-zinc-800 text-zinc-100"
-                                : "bg-transparent text-zinc-500 hover:text-zinc-300"
-                                }`}
-                        >
-                            List
-                        </button>
-
-                        <button
-                            type="button"
-                            onClick={() => setView("graph")}
-                            className={`px-3 py-2 transition-colors ${view === "graph"
-                                ? "bg-zinc-800 text-zinc-100"
-                                : "bg-transparent text-zinc-500 hover:text-zinc-300"
-                                }`}
-                        >
-                            Graph
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div className="flex flex-1 flex-col lg:flex-row">
-                <section className="border-b border-zinc-800 lg:w-[55%] lg:border-b-0 lg:border-r">
-                    {view === "list" ? (
-                        <div className="max-h-[calc(100vh-140px)] overflow-y-auto">
-                            {skillsData.categories.map((category) => {
-                                const categorySkills = filteredSkills.filter(
-                                    (skill) => skill.category_id === category.id
-                                );
-
-                                if (!categorySkills.length) return null;
-
-                                return (
-                                    <div key={category.id}>
-                                        <div className="sticky top-0 z-10 border-b border-zinc-800 bg-zinc-950 px-4 py-2">
-                                            <p className="text-[10px] uppercase tracking-[0.2em] text-zinc-500">
-                                                {category.label}
-                                            </p>
-                                        </div>
-
-                                        {categorySkills.map((skill) => (
-                                            <SkillRow
-                                                key={skill.id}
-                                                skill={skill}
-                                                selected={selectedSkillId === skill.id}
-                                                onSelect={handleSelectSkill}
-                                            />
-                                        ))}
-                                    </div>
-                                );
-                            })}
-
-                            {filteredSkills.length === 0 && (
-                                <div className="px-4 py-10 text-center">
-                                    <p className="text-sm text-zinc-500">
-                                        No skills match your search.
-                                    </p>
+                            <div className="flex items-center gap-2">
+                                <div className="hidden sm:block">
+                                    <input
+                                        type="search"
+                                        placeholder="Search skills..."
+                                        value={query}
+                                        onChange={(e) => setQuery(e.target.value)}
+                                        className="w-40 rounded-lg border border-zinc-800 bg-zinc-900 px-3 py-1.5 text-xs text-zinc-300 placeholder:text-zinc-600 focus:border-zinc-700 focus:outline-none"
+                                    />
                                 </div>
-                            )}
-                        </div>
-                    ) : (
-                        <div className="h-[420px] w-full p-3 lg:h-full">
-                            <SkillGraphCanvas
-                                skillsData={skillsData}
-                                selectedSkillId={selectedSkillId}
-                                onSelectSkill={handleSelectSkill}
-                            />
-                        </div>
-                    )}
-                </section>
 
-                <aside className="flex-1 bg-zinc-950">
-                    <div className="sticky top-0 z-10 flex items-center justify-between gap-3 border-b border-zinc-800 bg-zinc-950 px-4 py-3">
-                        <div className="space-y-1">
-                            <p className="text-xs font-medium text-zinc-400">Evidence Ledger</p>
-                            {selectedSkill?.summary && (
-                                <p className="max-w-md text-[11px] text-zinc-600">
-                                    {selectedSkill.summary}
-                                </p>
-                            )}
-                        </div>
-
-                        {selectedSkill && (
-                            <span className="rounded-full border border-blue-800 bg-blue-950 px-2.5 py-0.5 text-[11px] text-blue-300">
-                                {selectedSkill.label}
-                            </span>
-                        )}
-                    </div>
-
-                    <div className="max-h-[calc(100vh-140px)] overflow-y-auto">
-                        {!selectedSkillId ? (
-                            <div className="flex h-64 flex-col items-center justify-center gap-3 px-6 text-center">
-                                <p className="text-sm text-zinc-600">
-                                    Select a skill to see evidence
-                                </p>
-                                <p className="max-w-xs text-xs text-zinc-700">
-                                    Each skill is backed by shipped projects, proof points, live
-                                    demos, GitHub repositories, and API docs.
-                                </p>
+                                <div className="flex overflow-hidden rounded-full border border-zinc-800 text-[11px]">
+                                    <button
+                                        type="button"
+                                        onClick={() => setView("graph")}
+                                        className={`px-3 py-1.5 transition-colors ${view === "graph"
+                                            ? "bg-zinc-800 text-zinc-100"
+                                            : "bg-transparent text-zinc-500 hover:text-zinc-300"
+                                            }`}
+                                    >
+                                        Graph
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={() => setView("list")}
+                                        className={`px-3 py-1.5 transition-colors ${view === "list"
+                                            ? "bg-zinc-800 text-zinc-100"
+                                            : "bg-transparent text-zinc-500 hover:text-zinc-300"
+                                            }`}
+                                    >
+                                        List
+                                    </button>
+                                </div>
                             </div>
-                        ) : ledgerProjects.length === 0 ? (
-                            <div className="px-4 py-6">
-                                <p className="text-xs text-zinc-600">
-                                    No projects found for this skill yet.
-                                </p>
+                        </div>
+
+                        {view === "graph" ? (
+                            <div className="h-[580px] px-2 py-2 sm:px-4 sm:py-4">
+                                <SkillGraphCanvas
+                                    skillsData={skillsData}
+                                    selectedSkillId={selectedSkillId}
+                                    onSelectSkill={handleSelectSkill}
+                                />
                             </div>
                         ) : (
-                            ledgerProjects.map((project) => (
-                                <EvidenceCard key={project.id} project={project} />
-                            ))
+                            <div className="max-h-[580px] overflow-y-auto">
+                                {skillsData.categories.map((category) => {
+                                    const categorySkills = filteredSkills.filter(
+                                        (skill) => skill.category_id === category.id
+                                    );
+
+                                    if (!categorySkills.length) return null;
+
+                                    return (
+                                        <div key={category.id}>
+                                            <div className="sticky top-0 z-10 border-b border-zinc-800 bg-zinc-950 px-4 py-2">
+                                                <p className="text-[10px] uppercase tracking-[0.2em] text-zinc-500">
+                                                    {category.label}
+                                                </p>
+                                            </div>
+
+                                            {categorySkills.map((skill) => (
+                                                <SkillRow
+                                                    key={skill.id}
+                                                    skill={skill}
+                                                    selected={selectedSkillId === skill.id}
+                                                    onSelect={handleSelectSkill}
+                                                />
+                                            ))}
+                                        </div>
+                                    );
+                                })}
+
+                                {filteredSkills.length === 0 && (
+                                    <div className="px-4 py-10 text-center">
+                                        <p className="text-sm text-zinc-500">
+                                            No skills match your search.
+                                        </p>
+                                    </div>
+                                )}
+                            </div>
                         )}
+
+                        <div className="border-t border-zinc-800 px-4 py-3 sm:hidden">
+                            <input
+                                type="search"
+                                placeholder="Search skills..."
+                                value={query}
+                                onChange={(e) => setQuery(e.target.value)}
+                                className="w-full rounded-lg border border-zinc-800 bg-zinc-900 px-3 py-2 text-sm text-zinc-300 placeholder:text-zinc-600 focus:border-zinc-700 focus:outline-none"
+                            />
+                        </div>
                     </div>
-                </aside>
-            </div>
+
+                    <aside className="bg-zinc-950">
+                        <div className="flex items-center justify-between border-b border-zinc-800 px-4 py-3 sm:px-5">
+                            <p className="text-sm font-medium text-zinc-200">Evidence Ledger</p>
+
+                            {selectedSkill && (
+                                <span className="rounded-full border border-blue-800 bg-blue-950 px-2.5 py-1 text-[10px] text-blue-300">
+                                    {selectedSkill.label}
+                                </span>
+                            )}
+                        </div>
+
+                        <div className="max-h-[648px] overflow-y-auto">
+                            {!selectedSkillId ? (
+                                <div className="flex h-64 flex-col items-center justify-center gap-3 px-6 text-center">
+                                    <p className="text-sm text-zinc-600">
+                                        Select a skill to see evidence
+                                    </p>
+                                    <p className="max-w-xs text-xs text-zinc-700">
+                                        Each skill is backed by shipped projects, proof points, live
+                                        demos, GitHub repositories, and API docs.
+                                    </p>
+                                </div>
+                            ) : ledgerProjects.length === 0 ? (
+                                <div className="px-4 py-6">
+                                    <p className="text-xs text-zinc-600">
+                                        No projects found for this skill yet.
+                                    </p>
+                                </div>
+                            ) : (
+                                ledgerProjects.map((project) => (
+                                    <EvidenceCard key={project.id} project={project} />
+                                ))
+                            )}
+                        </div>
+                    </aside>
+                </div>
+            </section>
         </main>
     );
 }
