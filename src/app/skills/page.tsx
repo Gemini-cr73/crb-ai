@@ -370,7 +370,7 @@ type ViewMode = "list" | "graph";
 export default function SkillsPage() {
     const skillsData = useMemo(() => getSkills(), []);
     const [view, setView] = useState<ViewMode>("graph");
-    const [selectedSkillId, setSelectedSkillId] = useState<string | null>("docker");
+    const [selectedSkillId, setSelectedSkillId] = useState<string | null>(null);
     const [query, setQuery] = useState("");
 
     const filteredSkills = useMemo(() => {
@@ -441,7 +441,7 @@ export default function SkillsPage() {
                         </div>
 
                         {view === "graph" ? (
-                            <div className="h-[580px] px-2 py-2 sm:px-4 sm:py-4">
+                            <div className="mx-auto h-[580px] px-2 py-2 sm:px-4 sm:py-4">
                                 <SkillGraphCanvas
                                     skillsData={skillsData}
                                     selectedSkillId={selectedSkillId}
