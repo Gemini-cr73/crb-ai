@@ -4,15 +4,18 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
-    return getProjects().map((project) => ({ slug: project.slug }));
+    return getProjects().map((project) => ({
+        slug: project.slug,
+    }));
 }
 
 export async function generateMetadata({
     params,
 }: {
-    params: { slug: string };
+    params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-    const project = getProjectBySlug(params.slug);
+    const { slug } = await params;
+    const project = getProjectBySlug(slug);
 
     if (!project) {
         return {
@@ -21,7 +24,7 @@ export async function generateMetadata({
     }
 
     return {
-        title: `${project.name} · crb.ai`,
+        title: `${project.name} · crbdev.com`,
         description: project.one_liner,
     };
 }
@@ -43,12 +46,13 @@ function SkillChip({
     );
 }
 
-export default function ProjectCaseStudyPage({
+export default async function ProjectCaseStudyPage({
     params,
 }: {
-    params: { slug: string };
+    params: Promise<{ slug: string }>;
 }) {
-    const project = getProjectBySlug(params.slug);
+    const { slug } = await params;
+    const project = getProjectBySlug(slug);
 
     if (!project) {
         notFound();
