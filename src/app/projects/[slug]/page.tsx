@@ -46,6 +46,14 @@ function SkillChip({
     );
 }
 
+function SectionHeading({ children }: { children: React.ReactNode }) {
+    return (
+        <h2 className="text-[11px] uppercase tracking-[0.2em] text-zinc-500">
+            {children}
+        </h2>
+    );
+}
+
 export default async function ProjectCaseStudyPage({
     params,
 }: {
@@ -68,6 +76,10 @@ export default async function ProjectCaseStudyPage({
 
     const topTags = project.primary_tags?.slice(0, 3) ?? [];
     const evidence = project.evidence ?? [];
+    const hasAnyLinks =
+        Boolean(project.links?.live_demo) ||
+        Boolean(project.links?.github) ||
+        Boolean(project.links?.api);
 
     return (
         <main className="mx-auto flex w-full max-w-4xl flex-col gap-12 px-6 py-12 sm:py-16">
@@ -105,47 +117,48 @@ export default async function ProjectCaseStudyPage({
                     {project.one_liner}
                 </p>
 
-                <div className="flex flex-wrap gap-3 pt-1">
-                    {project.links?.live_demo && (
-                        <a
-                            href={project.links.live_demo}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="rounded-xl bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-all duration-300 hover:bg-blue-500 hover:shadow-[0_0_20px_rgba(59,130,246,0.22)]"
-                        >
-                            Live Demo ↗
-                        </a>
-                    )}
+                {hasAnyLinks && (
+                    <div className="flex flex-wrap gap-3 pt-1">
+                        {project.links?.live_demo && (
+                            <a
+                                href={project.links.live_demo}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="rounded-xl bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-all duration-300 hover:bg-blue-500 hover:shadow-[0_0_20px_rgba(59,130,246,0.22)]"
+                            >
+                                Live Demo ↗
+                            </a>
+                        )}
 
-                    {project.links?.github && (
-                        <a
-                            href={project.links.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="rounded-xl border border-zinc-700 px-4 py-2 text-sm text-zinc-300 transition-all duration-300 hover:border-zinc-500 hover:bg-zinc-900 hover:text-white"
-                        >
-                            GitHub ↗
-                        </a>
-                    )}
+                        {project.links?.github && (
+                            <a
+                                href={project.links.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="rounded-xl border border-zinc-700 px-4 py-2 text-sm text-zinc-300 transition-all duration-300 hover:border-zinc-500 hover:bg-zinc-900 hover:text-white"
+                            >
+                                GitHub ↗
+                            </a>
+                        )}
 
-                    {project.links?.api && (
-                        <a
-                            href={project.links.api}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="rounded-xl border border-zinc-800 px-4 py-2 text-sm text-zinc-500 transition-all duration-300 hover:border-zinc-600 hover:bg-zinc-900 hover:text-zinc-300"
-                        >
-                            API Docs ↗
-                        </a>
-                    )}
-                </div>
+                        {project.links?.api && (
+                            <a
+                                href={project.links.api}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="rounded-xl border border-zinc-800 px-4 py-2 text-sm text-zinc-500 transition-all duration-300 hover:border-zinc-600 hover:bg-zinc-900 hover:text-zinc-300"
+                            >
+                                API Docs ↗
+                            </a>
+                        )}
+                    </div>
+                )}
             </header>
 
             {project.summary && (
                 <section className="space-y-3">
-                    <h2 className="text-[11px] uppercase tracking-[0.2em] text-zinc-500">
-                        Overview
-                    </h2>
+                    <SectionHeading>Overview</SectionHeading>
+
                     <div className="rounded-2xl border border-zinc-800 bg-zinc-950/80 p-5">
                         <p className="text-sm leading-relaxed text-zinc-300">
                             {project.summary}
@@ -156,9 +169,7 @@ export default async function ProjectCaseStudyPage({
 
             {evidence.length > 0 && (
                 <section className="space-y-4">
-                    <h2 className="text-[11px] uppercase tracking-[0.2em] text-zinc-500">
-                        Evidence
-                    </h2>
+                    <SectionHeading>Evidence</SectionHeading>
 
                     <ul className="space-y-3">
                         {evidence.map((proof, index) => (
@@ -166,7 +177,7 @@ export default async function ProjectCaseStudyPage({
                                 key={`${project.id}-evidence-${index}`}
                                 className="group flex items-start gap-3 rounded-2xl border border-zinc-800 bg-zinc-950 p-4 transition-all duration-300 hover:border-zinc-700 hover:bg-zinc-900/80"
                             >
-                                <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full border border-zinc-700 bg-zinc-800 text-[10px] font-medium text-zinc-500 transition-colors duration-300 group-hover:text-zinc-300">
+                                <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full border border-zinc-700 bg-zinc-800 text-[10px] font-medium text-zinc-500 transition-colors duration-300 group-hover:text-zinc-300">
                                     {index + 1}
                                 </span>
 
@@ -181,9 +192,7 @@ export default async function ProjectCaseStudyPage({
 
             {usedSkills.length > 0 && (
                 <section className="space-y-4">
-                    <h2 className="text-[11px] uppercase tracking-[0.2em] text-zinc-500">
-                        Skills Used
-                    </h2>
+                    <SectionHeading>Skills Used</SectionHeading>
 
                     <div className="flex flex-wrap gap-2">
                         {usedSkills.map(({ id, label }) => (
@@ -196,6 +205,37 @@ export default async function ProjectCaseStudyPage({
                     </p>
                 </section>
             )}
+
+            <section className="space-y-4">
+                <SectionHeading>Need something similar?</SectionHeading>
+
+                <div className="rounded-2xl border border-zinc-800 bg-zinc-950/80 p-5">
+                    <p className="max-w-2xl text-sm leading-relaxed text-zinc-300">
+                        I build production-style AI, data, backend, and cloud systems with a focus on real usability,
+                        structured design, and deployable architecture.
+                    </p>
+
+                    <div className="mt-4 flex flex-wrap gap-3">
+                        <Link
+                            href="/projects"
+                            className="rounded-xl border border-zinc-700 px-4 py-2 text-sm text-zinc-300 transition-all duration-300 hover:border-zinc-500 hover:bg-zinc-900 hover:text-white"
+                        >
+                            View More Projects
+                        </Link>
+
+                        {project.links?.github && (
+                            <a
+                                href={project.links.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="rounded-xl bg-zinc-100 px-4 py-2 text-sm font-medium text-zinc-900 transition-all duration-300 hover:bg-white"
+                            >
+                                Review Code ↗
+                            </a>
+                        )}
+                    </div>
+                </div>
+            </section>
 
             <div className="border-t border-zinc-800 pt-4">
                 <Link

@@ -170,9 +170,9 @@
             "Built the project as a full-stack AI product with room for future visual generation features."
         ],
         "links": {
-            "live_demo": "",
-            "github": "",
-            "api": ""
+            "live_demo": "https://blueprint.ai-coach-lab.com/",
+            "github": "https://github.com/Gemini-cr73/blueprint-budget-ai",
+            "api": "https://api-blueprint.ai-coach-lab.com/docs"
         },
         "media": {
             "architecture": "",
