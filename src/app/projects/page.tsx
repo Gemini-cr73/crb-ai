@@ -130,7 +130,11 @@ export default function ProjectsPage() {
     const [query, setQuery] = useState("");
 
     const allTags = useMemo(() => {
-        return Array.from(new Set(allProjects.flatMap((project) => project.primary_tags))).sort();
+        return Array.from(
+            new Set(
+                allProjects.flatMap((project) => project.primary_tags ?? [])
+            )
+        ).sort();
     }, [allProjects]);
 
     const filteredProjects: Project[] = useMemo(() => {
@@ -159,8 +163,21 @@ export default function ProjectsPage() {
                 </h1>
 
                 <p className="max-w-2xl text-sm leading-relaxed text-zinc-400 sm:text-base">
-                    A portfolio of AI, data, cloud, and engineering projects with live demos,
-                    architecture thinking, and implementation depth.
+                    Explore deployed AI, data, cloud, and engineering systems built with
+                    production-style architecture, measurable implementation depth, and
+                    real delivery workflows.
+                </p>
+            </section>
+
+            <section className="rounded-2xl border border-zinc-800 bg-zinc-950/50 p-5">
+                <p className="text-[11px] uppercase tracking-[0.2em] text-zinc-500">
+                    Client-Ready Portfolio
+                </p>
+                <p className="mt-2 max-w-3xl text-sm leading-relaxed text-zinc-400">
+                    These projects show how I approach real system design: define the problem,
+                    build the backend and data flow, ship a usable interface, and deploy the
+                    solution to the cloud. Each project page includes live proof, technical
+                    evidence, and implementation context.
                 </p>
             </section>
 
