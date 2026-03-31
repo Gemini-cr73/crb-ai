@@ -11,7 +11,7 @@ function FeaturedProjectCard({
   return (
     <Link
       href={`/projects/${project.slug}`}
-      className="group relative flex min-h-[240px] flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950 p-5 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-blue-500/40 hover:bg-zinc-900 hover:shadow-[0_0_35px_rgba(59,130,246,0.12)]"
+      className="group relative flex min-h-[240px] flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950 p-5 transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:border-blue-500/50 hover:bg-zinc-900 hover:shadow-[0_0_45px_rgba(59,130,246,0.18)]"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.06),transparent_40%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
@@ -60,7 +60,10 @@ export default function HomePage() {
   return (
     <main className="mx-auto flex w-full max-w-6xl flex-col gap-20 px-6 py-12 sm:gap-24 sm:py-16">
       {/* Hero */}
-      <section className="space-y-8">
+      <section className="relative space-y-8">
+        {/* 🔥 Glow effect */}
+        <div className="pointer-events-none absolute -top-20 left-1/2 h-[400px] w-[700px] -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl" />
+
         <div className="inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-950/80 px-3 py-1 text-[11px] uppercase tracking-[0.2em] text-zinc-500 backdrop-blur">
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400" />
           {site.location}
@@ -81,16 +84,18 @@ export default function HomePage() {
         </div>
 
         <div className="flex flex-wrap items-center gap-3">
+          {/* 🔥 Primary CTA */}
           <Link
             href={cta.primary.href}
-            className="rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-medium text-white transition-all duration-300 hover:bg-blue-500 hover:shadow-[0_0_20px_rgba(59,130,246,0.25)]"
+            className="rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-medium text-white transition-all duration-300 hover:scale-105 hover:bg-blue-500 hover:shadow-[0_0_25px_rgba(59,130,246,0.45)] active:scale-95"
           >
             {cta.primary.label}
           </Link>
 
+          {/* 🔥 Secondary CTA */}
           <Link
             href={cta.secondary.href}
-            className="rounded-xl border border-zinc-700 px-5 py-2.5 text-sm text-zinc-200 transition-all duration-300 hover:border-zinc-500 hover:bg-zinc-900 hover:text-white"
+            className="rounded-xl border border-zinc-700 px-5 py-2.5 text-sm text-zinc-200 transition-all duration-300 hover:scale-105 hover:border-zinc-500 hover:bg-zinc-900 hover:text-white hover:shadow-[0_0_15px_rgba(255,255,255,0.05)]"
           >
             {cta.secondary.label}
           </Link>
@@ -108,35 +113,32 @@ export default function HomePage() {
 
       {/* Value blocks */}
       <section className="grid gap-4 md:grid-cols-3">
-        <div className="rounded-2xl border border-zinc-800 bg-zinc-950/70 p-5">
-          <p className="mb-2 text-[10px] uppercase tracking-[0.2em] text-zinc-500">
-            Focus
-          </p>
-          <p className="text-sm leading-relaxed text-zinc-300">
-            ML-first applications, LLM systems, retrieval workflows, APIs, and
-            cloud deployment.
-          </p>
-        </div>
-
-        <div className="rounded-2xl border border-zinc-800 bg-zinc-950/70 p-5">
-          <p className="mb-2 text-[10px] uppercase tracking-[0.2em] text-zinc-500">
-            Approach
-          </p>
-          <p className="text-sm leading-relaxed text-zinc-300">
-            I build portfolio-grade systems with evidence, architecture
-            thinking, reproducible workflows, and practical deployment.
-          </p>
-        </div>
-
-        <div className="rounded-2xl border border-zinc-800 bg-zinc-950/70 p-5">
-          <p className="mb-2 text-[10px] uppercase tracking-[0.2em] text-zinc-500">
-            Signature
-          </p>
-          <p className="text-sm leading-relaxed text-zinc-300">
-            A skill graph and evidence-ledger approach that ties capabilities to
-            real shipped work.
-          </p>
-        </div>
+        {[
+          {
+            title: "Focus",
+            text: "ML-first applications, LLM systems, retrieval workflows, APIs, and cloud deployment.",
+          },
+          {
+            title: "Approach",
+            text: "I build portfolio-grade systems with evidence, architecture thinking, reproducible workflows, and practical deployment.",
+          },
+          {
+            title: "Signature",
+            text: "A skill graph and evidence-ledger approach that ties capabilities to real shipped work.",
+          },
+        ].map((item) => (
+          <div
+            key={item.title}
+            className="rounded-2xl border border-zinc-800 bg-zinc-950/70 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_0_25px_rgba(59,130,246,0.08)]"
+          >
+            <p className="mb-2 text-[10px] uppercase tracking-[0.2em] text-zinc-500">
+              {item.title}
+            </p>
+            <p className="text-sm leading-relaxed text-zinc-300">
+              {item.text}
+            </p>
+          </div>
+        ))}
       </section>
 
       {/* Featured projects */}
@@ -184,13 +186,13 @@ export default function HomePage() {
         <div className="flex flex-wrap gap-3">
           <Link
             href="/skills"
-            className="rounded-xl border border-zinc-700 px-4 py-2 text-sm text-zinc-200 transition-all duration-300 hover:border-zinc-500 hover:bg-zinc-900 hover:text-white"
+            className="rounded-xl border border-zinc-700 px-4 py-2 text-sm text-zinc-200 transition-all duration-300 hover:scale-105 hover:border-zinc-500 hover:bg-zinc-900 hover:text-white"
           >
             Explore Skills
           </Link>
           <Link
             href="/projects"
-            className="rounded-xl bg-zinc-100 px-4 py-2 text-sm font-medium text-zinc-900 transition-all duration-300 hover:bg-white"
+            className="rounded-xl bg-zinc-100 px-4 py-2 text-sm font-medium text-zinc-900 transition-all duration-300 hover:scale-105 hover:bg-white"
           >
             Browse Projects
           </Link>
