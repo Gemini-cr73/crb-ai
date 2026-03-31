@@ -242,9 +242,9 @@
             "Positioned the system as a portfolio project with strong AI governance relevance."
         ],
         "links": {
-            "live_demo": "",
-            "github": "",
-            "api": ""
+            "live_demo": "https://iseo.ai-coach-lab.com/",
+            "github": "https://github.com/Gemini-cr73/iseo",
+            "api": "https://iseo-api.ai-coach-lab.com/docs"
         },
         "media": {
             "architecture": "",
