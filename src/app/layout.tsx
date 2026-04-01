@@ -15,12 +15,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen bg-black text-zinc-100 antialiased">
-        <div className="relative min-h-screen">
-          {/* Background glow */}
-          <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.08),transparent_28%),radial-gradient(circle_at_bottom,rgba(255,255,255,0.03),transparent_18%)]" />
+        <div className="site-shell relative min-h-screen overflow-x-hidden">
+          {/* Global holographic background for all pages */}
+          <div className="site-bg" aria-hidden="true" />
+          <div className="site-bg__veil" aria-hidden="true" />
 
           {/* ── NAVBAR ───────────────────────── */}
-          <header className="sticky top-0 z-50 border-b border-zinc-900 bg-black/80 backdrop-blur-xl">
+          <header className="sticky top-0 z-50 border-b border-white/5 bg-black/55 backdrop-blur-xl">
             <div className="mx-auto flex h-14 w-full max-w-6xl items-center justify-between px-6">
               <Link
                 href="/"
@@ -47,10 +48,10 @@ export default function RootLayout({
           </header>
 
           {/* ── PAGE CONTENT ─────────────────── */}
-          <main className="relative">{children}</main>
+          <main className="relative z-10">{children}</main>
 
           {/* ── FOOTER ───────────────────────── */}
-          <footer className="mt-16 border-t border-zinc-900">
+          <footer className="relative z-10 mt-16 border-t border-white/5 bg-black/20 backdrop-blur-sm">
             <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-6 text-xs text-zinc-600">
               <p>© {new Date().getFullYear()} crb.ai</p>
               <p className="text-zinc-700">Built with Next.js</p>
