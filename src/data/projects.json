@@ -62,7 +62,7 @@
             "Deployed the application using a containerized cloud architecture."
         ],
         "links": {
-            "live_demo": "https://app.ai-coach-lab.com",
+            "live_demo": "https://crb-ai-interview-coach.streamlit.app/",
             "github": "https://github.com/Gemini-cr73/ai-interview-coach",
             "api": "https://api.ai-coach-lab.com/docs"
         },
@@ -98,7 +98,7 @@
             "Migrated the project to a low-cost production-style deployment setup."
         ],
         "links": {
-            "live_demo": "https://market.ai-coach-lab.com",
+            "live_demo": "https://crb-ai-market-coach.streamlit.app/",
             "github": "https://github.com/Gemini-cr73/ai-market-coach",
             "api": "https://market-api.ai-coach-lab.com/docs"
         },
@@ -134,7 +134,7 @@
             "Deployed the API and UI publicly with a production-style architecture."
         ],
         "links": {
-            "live_demo": "https://rag.ai-coach-lab.com",
+            "live_demo": "https://crb-agentic-sql-rag.streamlit.app/",
             "github": "https://github.com/Gemini-cr73/agentic-sql-rag",
             "api": "https://api-rag.ai-coach-lab.com/docs"
         },
@@ -206,7 +206,7 @@
             "Prepared the project for public deployment with a production-ready container flow."
         ],
         "links": {
-            "live_demo": "https://app.fragility-sim.com",
+            "live_demo": "https://crb-decision-fragility.streamlit.app/",
             "github": "https://github.com/Gemini-cr73/decision-fragility-simulator",
             "api": "https://api.fragility-sim.com/docs"
         },
@@ -242,7 +242,7 @@
             "Positioned the system as a portfolio project with strong AI governance relevance."
         ],
         "links": {
-            "live_demo": "https://iseo.ai-coach-lab.com/",
+            "live_demo": "https://crb-iseo.streamlit.app/",
             "github": "https://github.com/Gemini-cr73/iseo",
             "api": "https://iseo-api.ai-coach-lab.com/docs"
         },
